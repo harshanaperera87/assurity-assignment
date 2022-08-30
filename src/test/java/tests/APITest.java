@@ -29,20 +29,20 @@ public class APITest {
                 .as(CategoryDetails.class);
     }
 
-    @Test
+    @Test (description = "Validate Name")
     public void testName(){
         Assert.assertEquals(response.getName(), "Carbon credits", "Name should be 'Carbon credits'");
     }
 
-    @Test
+    @Test (description = "Validate CanRelist")
     public void testCanRelist(){
         Assert.assertTrue(response.getCanRelist(), "CanRelist should be true!");
     }
 
-    @Test
+    @Test (description = "Validate GalleyPromotionDescription")
     public void testGalleyPromotionDescription() {
         Assert.assertTrue(response.getPromotions().stream().filter(e -> e.getName().equals("Gallery"))
                 .findFirst().get().getDescription().contains("Good position in category"),
-                "Description of the Promotion with Name 'Gallery' should contain 'Good position in category'");
+                "Description of the Promotion with Name 'Gallery' should be contained 'Good position in category'");
     }
 }

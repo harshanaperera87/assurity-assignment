@@ -10,8 +10,9 @@ import java.util.List;
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CategoryDetails {
 
+
+public class CategoryDetails {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("CanRelist")
